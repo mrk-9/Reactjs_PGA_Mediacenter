@@ -1,0 +1,18 @@
+- name: Media Guide
+  visible: true
+  file_path: https://media.pga.org/19MG_JonesCup_r1.pdf
+- name: Access Photos
+  visible: false
+  link:
+- name: Logos
+  visible: true
+  file_path: 'https://www.dropbox.com/sh/mwpuspm7wl1jw4h/AADvFr2UkdnBC4f5ndwACUuba?dl=0'
+- name: View Scoring
+  visible: false
+  link:
+- name: Fact Sheet
+  visible: false
+  file_path:
+- name: Championship Field
+  visible: false
+  file_path:

@@ -1,0 +1,49 @@
+---
+layout: base
+---
+<main class="main-content bg-white">
+  <div class="main-content__top">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="main-content__jumbo {% if page.photo_image %} {% else %} main-content__jumbo-title {% endif %}">
+          {% if page.photo_image %}
+          <img src="{{ page.photo_image }}" alt="{{ page.title }}" class="img-fluid">
+          {% else %}
+          {% endif %}
+          <div class="article-header">
+            <div class="article-tags">
+              {% for championship in page['championship(s)'] %}
+                <span class="badge text-capitalize bg-info">{{ championship | replace: '-', ' ' | upcase_keyword | replace: 'kitchenaid', 'KitchenAid'}}</span>
+              {% endfor %}
+            </div>
+            <h1 class="ml-2">
+              <span class="article-title">{{ page.title }}</span>
+            </h1>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <h5 class="text-primary mb-4">
+          {{ page.posted_date | date: '%B %d, %Y' }} | {{ page.author }}
+          {% if page.source %}
+            | {{ page.source }}
+          {% endif %} 
+        </h5>
+          {{ content }}
+      </div>
+      <div class="col-lg-4">
+        <h4 class="text-secondary pb-4">Recent Press Releases</h4>
+        {% for p in site.press-releases limit: 5 %}
+          <div>
+            <span class="text-primary d-block">{{ p.posted_date | date: '%B %d, %Y' }}</span>
+            <a class="text-secondary" href="{{ p.url }}">{{ p.title }}</a>
+            <hr>
+          </div>
+        {% endfor %}
+        <div class="text-center">
+          <a href="/press-releases" class="btn btn-outline-info btn-lg">VIEW MORE</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

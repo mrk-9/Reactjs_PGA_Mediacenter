@@ -1,0 +1,12 @@
+<h3 class="text-primary title-sans-serif text-inside font-medium mb-3 mb-lg-5">
+  {% if page.start_date == "Invalid date" and page.end_date == "Invalid date" %}
+    TBD
+  {% elsif page.start_date != "Invalid date" and page.end_date != "Invalid date" %}
+    {{ page.start_date | date: '%B %-d' }} - 
+    {{ page.end_date | date: '%B %-d' }}, {{ page.end_date | date: '%Y' }}
+  {% elsif page.start_date != "Invalid date" %}
+    {{ page.start_date | date: '%B %-d' }}, {{ page.end_date | date: '%Y' }}
+  {% elsif page.end_date != "Invalid date" %}
+    {{ page.end_date | date: '%B %-d' }}, {{ page.end_date | date: '%Y' }}
+  {% endif %}
+</h3>

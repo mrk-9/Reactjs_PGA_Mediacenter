@@ -1,0 +1,23 @@
+<h3 class="text-secondary title-sans-serif mb-4 mt-5">Future Sites</h3>
+<table class="table-thin mb-5">
+  <thead>
+    <tr>
+      <th>YEAR</th>
+      <th>TITLE</th>
+      <th>GOLF CLUB</th>
+      <th>CITY</th>
+      <th>STATE</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in page.future_sites %}
+    <tr>
+      <td>{{i.year}}</td>
+      <td>{{i.title}}</td>
+      <td>{{i.golf_club}}</td>
+      <td>{{i.city}}</td>
+      <td>{{i.state}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>

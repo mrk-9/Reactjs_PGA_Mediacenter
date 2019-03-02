@@ -1,0 +1,70 @@
+{% assign url_path = page.url | split: '/' %}
+{% assign championship = url_path[2] %}
+
+<div class="main-content__top h-100" style="background-image: url({{ page.event_image }})">
+  <header class="main-content__top-header justify-content-flex-start">
+    {% if page.logo_image %}
+      <img src="{{ page.logo_image }}" class="mr-0 mr-lg-4" width="121">
+    {% endif %}
+
+    <h1 class="text-secondary title-sans-serif mb-4 mb-lg-0">{{ page.title }}</h1>
+
+    {% if page.apply_for_credentials 
+       and page.application_open_date != "Invalid date"
+       and page.application_deadline_date != "Invalid date"  %}
+      <div class="credentials d-flex flex-column ml-lg-auto align-items-center">
+          {% capture today %}{{'now' | date: '%s'}}{% endcapture %}
+          {% capture open_date %}{{page.application_open_date | date: '%s'}}{% endcapture %}
+
+          {% if today < open_date %}
+            <a href="#" class="btn btn-info d-block mb-2 btn-lg disabled" role="button">APPLY FOR CREDENTIALS</a>
+            <h5 class="font-weight-light title-sans-serif text-center">Accepting applications starting <br/> {{ page.application_open_date | date: "%m/%d/%Y" }}</h5>
+          {% else %}
+            <a href="{{ page.application_url }}" class="btn btn-info d-block mb-2 btn-lg" role="button">APPLY FOR CREDENTIALS</a>
+            <h5 class="font-weight-light title-sans-serif text-center">Application deadline {{ page.application_deadline_date | date: "%m/%d/%Y" }}</h5>
+          {% endif %}
+      </div>
+    {% endif %}
+
+  </header>
+  <div class="main-content__top-inner" style="height: 90%;">
+    <div class="row">
+      <div class="col-lg-12 col-xl-6 col-xxl-7">
+        <h3 class="text-secondary title-sans-serif mb-5 d-none d-lg-block">Overview</h3>
+        <div class="row">
+          <div class="col-md-6">
+            <h5 class="text-secondary title-sans-serif">Date</h5>
+            {% include championships/date_range.html %}
+          </div>
+          <div class="col-md-6">
+            <h5 class="text-secondary title-sans-serif">Location</h5>
+            <h3 class="text-primary title-sans-serif text-inside font-medium mb-4 mb-lg-5">{{ page.event_location }}</h3>
+          </div>
+          {% if page.defending_champion_fullname %}
+          <div class="col-md-12">
+            <h5 class="text-secondary title-sans-serif">Defending Champion: {{page.defending_champion_fullname}} </h5>
+          </div>
+          {% endif %}
+          <div class="col-md-12 champinoship-body">
+            {% if content.size > 1 %}
+            <div class="championship-content">
+              {{ content }}
+            </div>
+            {% else %}
+              <p class="p-lg mb-4">{{ site.data.lorem.medium | markdownify }}</p>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      <!-- PRESS RELEASE LIST -->
+      <div class="col-lg-12 col-xl-6 col-xxl-5 press-releases_championship">
+        {% include mobile-nav-championsip.html %}
+        <h3 class="text-secondary title-sans-serif mb-3 mb-lg-5">Press Releases</h3>
+        {% include press_releases/by_championship.html championship=championship %}
+        <div class="text-center d-lg-block">
+          <a href="/press-releases?filter={{ championship }}" class="btn btn-outline-info d-block d-sm-inline-block btn-lg">ALL PRESS RELEASES</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

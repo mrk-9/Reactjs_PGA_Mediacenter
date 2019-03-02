@@ -1,0 +1,38 @@
+/* LARGE SCREEN SIZES */
+@include media-breakpoint-up(lg) {
+  // tiles font sizes
+  .tiles-body h3 {
+    font-size: 1.25rem;
+  }
+}
+@include media-breakpoint-down(xl) { 
+    h4,.h4{
+        font-size:1rem;
+    }
+}
+@include media-breakpoint-down(lg) { 
+    h3,.h3{
+        font-size:1.35rem;
+    }
+    h4,.h4{
+        font-size:1.1rem;
+    }
+}
+@include media-breakpoint-down(md) { 
+    h3,.h3{
+        font-size:1.25rem;
+    }
+    h4,.h4{
+        font-size:1rem;
+    }
+}
+@include media-breakpoint-only(lg) { 
+   
+}
+@include media-breakpoint-only(md) { 
+}
+@include media-breakpoint-only(sm) { 
+    h4,.h4{
+        font-size:1.2rem;
+    }
+}

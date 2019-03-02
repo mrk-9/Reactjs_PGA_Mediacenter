@@ -1,0 +1,17 @@
+---
+title: Charles Schwab Named a Sponsor of the PGA of America and PGA Championship
+championship(s):
+  - pga-championship
+photo_image: /uploads/pgaschwab.jpg
+posted_date: 2018-04-11 00:00:00
+summary_markdown:
+source:
+author: PGA of America
+layout: press-release
+---
+
+PALM BEACH GARDENS, Fla. – Charles Schwab, one of the world’s leading investment services firms, was named today as a sponsor and “The Official Wealth Management Firm of the PGA of America and PGA Championship.”<br><br>Charles Schwab has been a consistent supporter of professional golf for more than two decades. Today’s announcement provides the firm with the opportunity to further its efforts in growing the game at the grassroots level, partnering with the PGA’s 29,000 Professionals. The three year agreement—inclusive of the 2018 PGA Championship at Bellerive Country Club in St. Louis; 2019 PGA Championship at Bethpage Black in Long Island, New York; and 2020 PGA Championship at TPC Harding Park in San Francisco—encompasses a variety of interactive activities designed for spectators and top instructional online content. &nbsp;<br><br>“The PGA of America welcomes Charles Schwab to our impressive portfolio of sponsors,” said Luke Reissman, Senior Director of Partnerships for the PGA of America. “Schwab’s commitment to providing an array of premier financial services and to enhance the spectator experience at the PGA Championship presents exciting opportunities for PGA Members and spectators alike.”<br><br>“As a long-term supporter of the game of golf, we believe this relationship with the PGA of America and its teaching Professionals aligns well with the passions and interests of our clients,” said Derek Benbow, Managing Director of Corporate Sponsorships at Charles Schwab. “Schwab celebrates those who work hard, overcome challenges, and pursue their dreams – and we find some of the best examples of such individuals in sports like golf.” &nbsp;
+
+#### About Charles Schwab
+
+The Charles Schwab Corporation (NYSE: SCHW) is a leading provider of financial services, with more than 345 offices and 10.9 million active brokerage accounts, 1.6 million corporate retirement plan participants, 1.2 million banking accounts, and $3.33 trillion in client assets as of February 28, 2018. Through its operating subsidiaries, the company provides a full range of wealth management, securities brokerage, banking, money management, custody, and financial advisory services to individual investors and independent investment advisors. Its broker-dealer subsidiary, Charles Schwab & Co., Inc. (member SIPC, http://www.sipc.org), and affiliates offer a complete range of investment services and products including an extensive selection of mutual funds; financial planning and investment advice; retirement plan and equity compensation plan services; referrals to independent fee-based investment advisors; and custodial, operational and trading support for independent, fee-based investment advisors through Schwab Advisor Services. Its banking subsidiary, Charles Schwab Bank (member FDIC and an Equal Housing Lender), provides banking and lending services and products. Brokerage Products: Not FDIC Insured-No Bank Guarantee- May Lose Value.&nbsp; More information is available at www.schwab.com and www.aboutschwab.com.

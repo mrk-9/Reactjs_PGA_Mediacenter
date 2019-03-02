@@ -1,0 +1,45 @@
+---
+layout: base
+permalink: /
+photo_image:
+posted_date: February 22, 2018
+event: U.S. Captain Jim Furyk names two more vice captains for 2018 Ryder Cup
+summary_markdown:
+source: PGA of America
+author: PGA
+---
+<main class="main-content">
+  <div class="main-content__top main-content__top-home">
+    <div class="tiles-wrapper p-md-5">
+      <h1 class="text-secondary title-sans-serif">Media Center</h1>
+      <p>Official news, information, and press resource center of the PGA.</p>
+      <div class="row-sm mt-5 d-none d-lg-flex">
+        <!-- Media center tiles -->
+        {% include championships/tiles.html %}
+      </div>
+    </div>
+  </div>
+  {% include mobile-nav.html %}
+  <div class="main-content__bottom main-content__bottom-home">
+    <div class="container-fluid px-md-5">
+      <div class="row">
+        <div class="col-lg-6">
+          <h3 class="mb-5 title-sans-serif text-secondary text-center text-md-left">Latest Press Releases</h3>
+        </div>
+      </div>
+      <div class="row">
+        {% assign sorted-press-releases = site.press-releases | sort: 'posted_date' | reverse %}
+
+        <!-- Latest Press Releases tiles -->
+        {% for iterator in sorted-press-releases limit: 10 %}
+        <div class="col-xl-6">
+          {% include press_releases/single.html iterator=iterator with_championships=true %}
+        </div>
+        {% endfor %}
+      </div>
+      <div class="text-center mt-3 mt-lg-5">
+        <a href="/press-releases" class="btn btn-outline-info btn-lg d-block d-sm-inline-block">ALL PRESS RELEASES</a>
+      </div>
+    </div>
+  </div>
+</main>

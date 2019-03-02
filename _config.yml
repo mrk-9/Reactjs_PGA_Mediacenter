@@ -1,0 +1,152 @@
+# ----
+# Site
+
+title: Media Center | PGA.org
+email: membership@pgahq.com
+copyright: 2018 The PGA of America
+description: 'Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for Google search
+  results) and in your feed.xml site description.'
+baseurl: ''
+url: ''
+twitter_username: PGA
+github_username: jekyll
+facebook_username: PGAcom
+linkedin_username: company/pga-of-america/
+google_plus_username: "+PGA"
+youtube_username: pgacom
+timezone: UTC
+permalink: pretty
+markdown: kramdown
+
+# -----
+# Custom Collections
+
+collections:
+  press-releases:
+    output: true
+  pages:
+    output: true
+    permalink: "/:path/"
+  championships:
+    output: true
+    permalink: "/:path"
+
+# -----
+# Styles & Plugins
+
+theme: jekyll-theme-pga-default
+plugins:
+  - jekyll-feed
+  - bootstrap
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-target-blank
+
+# -----
+# Algolia configuration
+algolia:
+  application_id: 0TSYHLZXNU
+  max_record_size: 20000
+  index_name: media_center_press_releases
+  indexing_batch_size: 100
+  settings:
+    attributesForFaceting:
+      - type
+      - searchable(collection)
+      - searchable(categories)
+      - searchable(tags)
+      - searchable(title)
+      - searchable(championship(s))
+  extensions_to_index:
+    - html
+    - md
+  search_only_api_key: fcb9f2e9d09404756042d1802a68c4c4
+  nodes_to_index: 'p,li,div.paragraph,h1,h2,h3,h4,h5,h6'
+  files_to_exclude:
+    - _pages/**/*
+    - _posts/**/*
+    - _championships/**/*
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+flexbox: no-2009
+browsers:
+- "> 1%"
+- last 2 versions
+- IE > 8
+
+# ----
+# Third Party
+google_analytics_key: UA-2875023-57
+
+
+# -----------
+# CLOUD CANNON CONFIGURATION
+
+# PRESS RELEASES CHAMPIONSHIP TYPES
+championship(s):
+  - kitchenaid-senior-pga-championship
+  - kpmg-womens-pga-championship
+  - pga-championship
+  - ryder-cup
+  - pga-works-collegiate-championship
+  - pga-jones-cup
+  - girls-junior-pga-championship
+  - boys-junior-pga-championship
+  - pga-jr-league-championship
+  - junior-ryder-cup
+  - pga-professional-championship
+  - senior-pga-professional-championship
+  - national-car-rental-assistant-pga-professional-championship
+  - pga-cup
+  - womens-pga-cup
+
+_options:
+  test_image:
+    uploads_dir: "uploads/resized-images/:title"
+    resize_style: "contain"
+    # width: 90
+    # height: 120
+    # mime_type: "image/jpeg"
+    # expandable: true # true allows images to be enlarged past original dimensions.
+  content:
+    width: 480
+    height: 480
+    # resize_style: "cover"
+    # mime_type: "image/png"
+
+# social_icons:
+#   - Email
+#   - Facebook
+#   - Google Plus
+#   - Instagram
+#   - LinkedIn
+#   - Pinterest
+#   - Tumblr
+#   - Twitter
+#   - YouTube
+#   - RSS
+
+# _comments:
+#   map: Update the map location and display settings.
+#   latitude: Coordinates for the center marker on the map.
+#   longitude: Coordinates for the center marker on the map.
+#   zoom: The zoom level for the map.
+#   pricing_table: Update the information in the pricing tables.
+#   highlight: Emphasis the text
+#   color: The background color used in the plan name and call to action.
+#   new_window: Open link in new window
+#   description: This is used for facebook shares of the page and google indexing

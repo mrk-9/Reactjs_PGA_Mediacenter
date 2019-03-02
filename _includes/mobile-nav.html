@@ -1,0 +1,20 @@
+
+<ul class="mobile-nav {{ include.class }}" id="accordionExample">
+  {% for s in site.data.championship_groups %}
+  <li>
+      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#{{ s.group }}" aria-expanded="true" aria-controls="collapseOne">
+        {{ s.group | replace: '-', ' ' | upcase_keyword }}
+      </button>
+
+    <div id="{{ s.group }}" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+         <ul class="mobile-nav__secondary">
+           {% for s_item in s.championships %}
+           <li>
+             <a href="/{{ s.group }}/{{ s_item.name }}">{{ s_item.name | replace: '-', ' ' | upcase_keyword }}</a>
+           </li>
+           {% endfor %}
+         </ul>
+    </div>
+  </li>
+  {% endfor %}
+</ul>

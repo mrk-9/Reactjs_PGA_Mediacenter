@@ -1,0 +1,6 @@
+{% for i in site.data["side-navigation"] %}
+  <div class="d-flex justify-content-between p-3">
+    {% include title-link.html %}
+    <i class="icon icon-arrow-right"></i>
+  </div>
+{% endfor %}

@@ -1,0 +1,22 @@
+{% include unique-championships.html %}
+<!-- <select class="" name="">
+  <option value="hide">All Championships</option>
+  {{unique_tags}}
+
+  {% for championship in unique_tags %}
+    {% if championship != '' %}
+    <option value="{{championship}}">{{championship | replace: '-', ' ' | upcase_keyword  }}</option>
+    {% endif %}
+  {% endfor %}
+</select> -->
+
+<div id="championships-dropdown" class="select select-custom">
+  <div class="select-styled">All Championships</div>
+  <ul class="select-options">
+    {% for championship in unique_tags %}
+      {% if championship != '' %}
+      <li rel="{{ championship  }}"> {{championship | replace: '-', ' ' | upcase_keyword  }}</option>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</div>

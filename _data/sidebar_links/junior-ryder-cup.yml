@@ -1,0 +1,22 @@
+- name: Media Guide
+  visible: true
+  file_path: /
+  target: _blank
+- name: Access Photos
+  visible: false
+  link: /
+- name: Logos
+  visible: true
+  file_path: 'https://www.dropbox.com/sh/pog589m7bidncih/AADdYNV8-NQ_Qn1sP7Vlj3Qna?dl=0'
+- name: Event Program
+  visible: false
+  link: /
+- name: View Scoring
+  visible: false
+  link: /
+- name: Fact Sheet
+  visible: false
+  file_path: /
+- name: Statistics
+  visible: false
+  file_path: /

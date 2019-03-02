@@ -1,0 +1,25 @@
+{% assign championship = include.championship %}
+{% assign by_championship = site.press-releases | where_exp: "item", "item['championship(s)'] contains championship" %}
+{% assign sorted = by_championship | sort: "posted_date" | reverse %}
+
+{% for i in sorted limit: 3 %}
+<div class="press-releases-by-championship">
+    <a href="{{ i.url }}">
+    <div class="card flex-row no-border mb-3 mb-lg-4 align-items-center">
+      
+        <div class="card-image card-image-md mr-4 d-none d-md-block">
+          {% if i.photo_image %}
+          <img src="{{ i.photo_image }}" alt="{{ i.title }}">
+          {% else %}
+          <img src="/uploads/placeholder_pga.png" alt="Placeholder" class="img-fluid">
+          {% endif %}
+        </div>
+      <div class="card-inner">
+          <h6 class="text-primary">{{ i.posted_date | date: '%b %d, %Y' }}</h6>
+          <h4 class="text-secondary title-serif font-medium mb-0 d-none d-lg-block">{{ i.title }}</h4>
+          <h4 class="text-secondary title-serif font-medium mb-0 d-lg-none">{{ i.title }}</h4>
+      </div>
+    </div>
+  </a>
+</div>
+{% endfor %}

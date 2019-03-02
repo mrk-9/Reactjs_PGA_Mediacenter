@@ -1,0 +1,26 @@
+- name: Media Guide
+  visible: true
+  file_path: >-
+    https://www.pga.org/sites/default/files/assets/library/compressed_rc2018_media_guide.pdf
+  target:
+- name: Transcripts
+  visible: true
+  link: 'http://asaptext.com/orgs/pga/222/'
+- name: Logos
+  visible: true
+  file_path: 'https://www.dropbox.com/sh/38i9irtzowiiovp/AADPGOla5f6CAmePPP9oWFV1a?dl=0'
+- name: Photos
+  visible: true
+  file_path: /uploads/PhotoLink_MediaCenterRC.pdf
+- name: B-Roll
+  visible: true
+  file_path: 'https://www.dropbox.com/sh/mgxikmsuq5d116b/AABL981bVQIEB61oD4V-nAN7a?dl=0'
+- name: U.S. Captain Profile
+  visible: true
+  file_path: /uploads/Stricker Profile.pdf
+- name: U.S. Points Standings
+  visible: false
+  file_path:
+- name: U.S. Points System
+  visible: true
+  file_path: /uploads/2020 Ryder Cup Points System and Qualification Process (002).pdf

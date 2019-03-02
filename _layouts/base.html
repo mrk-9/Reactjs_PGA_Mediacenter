@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+  {% include head.html path="/css/main-custom.css" %}
+    <body style="height: 100vh;">
+      <div id="main" class="h-100">
+        {% include sidebar.html %}
+        {% include header-mobile.html %}
+        {{ content }}
+      </div>
+    </body>
+ {% include scripts.html %}
+</html>

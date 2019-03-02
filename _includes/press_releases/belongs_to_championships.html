@@ -1,0 +1,11 @@
+<span class="d-none d-lg-inline">
+  {% if i['championship(s)'] %}
+    |
+  {% endif %}
+  {% for c in i['championship(s)'] %}
+    {{ c | replace: '-', ' ' | upcase_keyword | replace: 'kitchenaid', 'KitchenAid' }}
+    {% if forloop.last == false %}
+      |
+    {% endif %}
+  {% endfor %}
+</span>

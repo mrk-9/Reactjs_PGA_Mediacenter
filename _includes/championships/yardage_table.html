@@ -1,0 +1,67 @@
+<table class="table-thin mb-5">
+  <thead>
+    <tr>
+      <th>HOLE</th>
+      <th>YARDAGE</th>
+      <th>PAR</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in page.yardage_table %}
+      {% assign sum_par       = sum_par       | plus: i.par_number %}
+      {% assign sum_yardage   = sum_yardage   | plus: i.mens_yardage_number %}
+      {% assign total_yardage = total_yardage | plus: i.mens_yardage_number %}
+      {% assign total_par     = total_par     | plus: i.par_number %}
+      <tr>
+        <td>{{i.hole_number}}</td>
+        {% if i.mens_yardage_number %}
+          {% if i.womens_yardage_number %}
+            <td>
+              {{i.mens_yardage_number}} (M)
+            </td>
+          {% else %}
+            <td>
+              {{i.mens_yardage_number}}
+            </td>
+          {% endif %}
+        {% endif %}
+
+        {% if i.womens_yardage_number %}
+          {% if i.mens_yardage_number %}
+            <td>
+              {{i.womens_yardage_number}} (W)
+            </td>
+          {% else %}
+            <td>
+              {{i.womens_yardage_number}}
+            </td>
+          {% endif %}
+        {% endif %}
+        <td>{{i.par_number}}</td>
+      </tr>
+
+      {% if i.hole_number == 9 %}
+      <tr>
+        <td>OUT</td>
+        <td>{{sum_yardage}}</td>
+        <td>{{sum_par}}</td>
+      </tr>
+      {% assign sum_par     = 0 %}
+      {% assign sum_yardage = 0 %}
+      {% endif %}
+
+      {% if i.hole_number == 18 %}
+      <tr>
+        <td>IN</td>
+        <td>{{sum_yardage}}</td>
+        <td>{{sum_par}}</td>
+      </tr>
+      {% endif %}
+    {% endfor %}
+    <tr>
+      <td>TOTAL</td>
+      <td>{{total_yardage}}</td>
+      <td>{{total_par}}</td>
+    </tr>
+  </tbody>
+</table>

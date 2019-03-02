@@ -1,0 +1,14 @@
+---
+layout: base
+---
+{% assign url_path = page.url | split: '/' %}
+{% assign championship = url_path[2] %}
+
+<main class="main-content">
+  <div class="main-content__top">
+    <h3 class="text-secondary title-sans-serif mb-5 text-capitalize">{{ championship | replace: '-', ' ' }} Press Releases</h3>
+    <div class="col-xl-8 p-0">
+      {% include press_releases/by_championship.html championship=championship %}
+    </div>
+  </div>
+</main>

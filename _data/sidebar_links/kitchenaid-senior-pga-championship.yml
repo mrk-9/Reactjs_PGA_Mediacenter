@@ -1,0 +1,36 @@
+- name: Media Guide
+  visible: true
+  file_path: /uploads/19MG_SR_CHMP.pdf
+- name: Transcripts
+  visible: true
+  link: 'http://asaptext.com/orgs/pga/454/'
+- name: Event Logos
+  visible: false
+  file_path: /
+- name: Coverage Regulations
+  visible: false
+  file_path: /
+- name: Event Program
+  visible: false
+  link:
+- name: View Scoring
+  visible: false
+  link:
+- name: Fact Sheet
+  visible: false
+  file_path: /
+- name: Championship Field
+  visible: false
+  file_path: /
+- name: Players Guide
+  visible: false
+  file_path: /
+- name: Statistics
+  visible: true
+  file_path: 'https://www.dropbox.com/sh/weudky12od3v49e/AAA4wO42bk4Bklcq2xp-zIxaa?dl=0'
+- name: Logos
+  visible: true
+  file_path: 'https://www.dropbox.com/sh/awqvcdbke2fsdem/AADP-2f_89O9bZYGDgIeHmtKa?dl=0'
+- name:
+  visible: true
+  file_path: /uploads/PhotoLink_MediaCenterSRPGA.pdf

@@ -1,0 +1,6 @@
+- name: Media Guide
+  visible: false
+  file_path: 'https://media.pga.org/uploads/19MG_PGA_CHAMP-compressed.pdf'
+- name: Logos
+  visible: true
+  file_path: 'https://www.dropbox.com/sh/5b4fbnawupbtljt/AAAh5ybHj-cfLlQyz7YSjvkMa?dl=0'

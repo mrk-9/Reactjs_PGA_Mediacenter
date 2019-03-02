@@ -1,0 +1,90 @@
+<!-- ASSIGN VARIABLES FROM CURRENT BROWSER URL -->
+{% assign url_split = page.url | split:'/' %}
+{% assign category_from_url = url_split[1] %}
+{% assign sub_category_from_url = url_split[2] %}
+{% assign page_from_url = url_split[3] %}
+{% assign size = url_split.size %}
+
+<!-- DEBUG -->
+<!-- CATEGORY: {{category_from_url}}
+<br>
+SUB CATEGORY: {{sub_category_from_url}}
+<br>
+PAGE: {{page_from_url}}
+<br>
+SIZE: {{size}} -->
+
+<aside class="sidebar-fixed {% if page.id == 404 %}d-none{% endif %}">
+  <header class="sidebar-fixed-header">
+    <button class="navbar-toggler" id="closeMobileButton"><img src="/uploads/icons/icon-cancel.svg" alt="Media Center Logo" width="19" height="18"></button>
+    <a href="/"><img src="/uploads/media-center-logo.jpg" alt="Media Center Logo" width="193" height="79"></a>
+  </header>
+  <div class="sidebar-body">
+    <nav class="slide-menu {% if category_from_url contains 'about-the-pga-of-america' %} indent-first {% endif %}">
+             
+      <ul class="slide-menu__primary">
+          
+        {% for s in site.data.championship_groups %}
+          <li {% if s.group contains category_from_url %} class="active" {% endif %}>
+
+            <a href="#"><span>{{ s.group | replace: '-', ' ' | upcase_keyword }}</span> <i class="icon icon-arrow-right"></i></a>
+            <ul class="slide-menu__secondary">
+              <li>
+                <a href="#" class="slide-menu-control"><i class="icon icon-arrow-left"></i> <span>{{ s.group | replace: '-', ' ' | upcase_keyword }}</span></a>
+              </li>
+              {% for s_item in s.championships %}
+                <li {% if s_item.name == sub_category_from_url %} class="active" {% endif %}>
+                  <a href="/{{ s.group }}/{{ s_item.name }}"><span>{{ s_item.name | replace: '-', ' ' | upcase_keyword | replace: 'kitchenaid', 'KitchenAid' | replace: 'works', 'WORKS' }}</span> <i class="icon icon-arrow-right"></i></a>
+                  <ul class="slide-menu__inner">
+                    <li>
+                      <a href="/{{ s.group }}/{{ s_item.name }}" class="slide-menu-control"><i class="icon icon-arrow-left"></i> <span>{{ s_item.name | replace: '-', ' ' | upcase_keyword | replace: 'kitchenaid', 'KitchenAid' | replace: 'works', 'WORKS' }}</span></a>
+                    </li>
+                    <!-- <li {% if size == 5 %} class="active" {% endif %}>
+                      <a href="/{{ s.group }}/{{ s_item.name }}/press-releases/">Press Releases</a>
+                    </li> -->
+
+                    {% for item in site.data.sidebar_links[s_item.name] %}
+                      {% if item.visible %}
+                        <li {% if item.name contains page_from_url %} class="active" {% endif %}>
+                          <a href="{% if item.link %}{{ item.link }}{% else %}{{ item.file_path }}{% endif %}" {% if item.target %}target="{{ item.target|escape }}"{% endif %} >{{item.name | replace: '-', ' ' | upcase_keyword }}</a>
+                        </li>
+                      {% endif %}
+                    {% endfor %}
+                    <li>
+                      <form class="form-search">
+                        <input type="search" class="sidebar-search-control sidebar-search-input" placeholder="Search Press Releases">
+                        <button type="submit"></button>
+                      </form>
+                    </li>
+                  </ul>
+                </li>
+              {% endfor %}
+              <li>
+                <form class="form-search">
+                  <input type="search" class="sidebar-search-control sidebar-search-input" placeholder="Search Press Releases">
+                  <button type="submit"></button>
+                </form>
+              </li>
+            </ul>
+          </li>
+        {% endfor %}
+        <li>
+          <form class="form-search">
+            <input type="search" class="sidebar-search-control sidebar-search-input" placeholder="Search Press Releases">
+            <button type="submit"></button>
+          </form>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <footer>
+    <p>Copyright &copy; <script>document.write(new Date().getFullYear())</script> PGA of America. All rights reserved. </p>
+    <div class="sidebar-links">
+      <div><a href="/contact-us">Contact Us</a></div>
+      <div class="sidebar-vline"></div>
+      <div><a href="https://www.pga.org/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a></div>
+    </div>
+  </footer>
+</aside>
+
+<div class="overlay"></div>

@@ -1,0 +1,57 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    {% if page.title and page.url != '/' %}{{ page.title | escape }}
+    {% else %}{{ site.title | escape }}{% endif %}
+  </title>
+  <link rel="manifest" href="{{ "/manifest.json" | prepend: full_base_url }}">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="PGA">
+  <meta name="apple-mobile-web-app-title" content="PGA">
+  <meta name="msapplication-starturl" content="/">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/favicon-16x16.png">
+  <link rel="mask-icon" href="/assets/images/favicons/safari-pinned-tab.svg" color="#b4975a">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+
+  <!-- Add Google Fonts -->
+  <script type="text/javascript">
+    WebFontConfig = {
+      google: {
+        families: [
+          'Montserrat:300,400,500,600,700,900',
+          'Playfair Display:400, 500, 600, 700'
+        ]
+      }
+    };
+    (function() {
+      var wf = document.createElement('script');
+      wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+        '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+      wf.type = 'text/javascript';
+      wf.async = 'true';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(wf, s);
+    })();
+  </script>
+
+
+  {% assign custom_url = site.url | append: site.baseurl %}
+  {% assign full_base_url = custom_url %}
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="stylesheet" href="{{ include.path | relative_url }}">
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: full_base_url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | prepend: full_base_url }}">
+
+  {% if jekyll.environment == 'production' %}
+    {% include google-analytics.html %}
+  {% endif %}

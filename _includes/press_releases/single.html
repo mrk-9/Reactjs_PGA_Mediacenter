@@ -1,0 +1,25 @@
+{% assign i = include.iterator %}
+
+<div class="latest-press-releases">
+  <a href="{{ i.url }}">
+    <div class="card flex-row no-border mb-3 mb-lg-4 align-items-center card-fixed-height-126">
+      <div class="card-image card-image-lg d-none d-md-block">
+        {% if i.photo_image %}
+          <img src="{{ i.photo_image }}" alt="{{ i.title }}">
+        {% else %}
+          <img src="/uploads/placeholder_pga.png" alt="Placeholder">
+        {% endif %}
+      </div>
+      <div class="card-inner p-3">
+        <h6 class="text-primary text-capitalize">
+          {{ i.posted_date | date: '%b %d, %Y' }}
+          {% if include.with_championships %}
+            {% include press_releases/belongs_to_championships.html %}
+          {% endif %}
+        </h6>
+        <h4 class="text-secondary title-serif font-medium mb-0 d-none d-lg-block">{{ i.title }}</h4>
+        <h4 class="text-secondary title-serif font-medium mb-0 d-lg-none">{{ i.title }}</h4>
+      </div>
+    </div>
+  </a>
+</div>

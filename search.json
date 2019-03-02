@@ -1,0 +1,20 @@
+---
+layout: null
+---
+[
+  {% for post in site.press-releases %}
+    {
+      "id": "{{ forloop.index0 }}",
+      "title": "{{ post.title | xml_escape }}",
+      "author": "{{ post.author | xml_escape }}",
+      "category": "{{ post.category | xml_escape }}",
+      "content": {{ post.content | strip_html | strip_newlines | jsonify }},
+      "url": "{{ post.url | xml_escape }}",
+      "source"     : "{{ post.source }}",
+      "date"     : "{{ post.posted_date }}",
+      "category" : "{{ post.category }}",
+      "championships" : "{{ post['championship(s)'] | join: ',' }}"
+    }
+    {% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]

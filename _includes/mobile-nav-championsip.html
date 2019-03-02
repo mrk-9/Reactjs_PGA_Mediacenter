@@ -1,0 +1,27 @@
+{% assign url_split = page.url | split:'/' %}
+{% assign category_from_url = url_split[1] %}
+{% assign sub_category_from_url = url_split[2] %}
+{% assign page_from_url = url_split[3] %}
+{% assign size = url_split.size %}
+
+<ul class="mobile-nav_championsip" id="accordionExample">
+  {% for s in site.data.championship_groups %}
+    {% for s_item in s.championships %}
+      {% if s_item.name == sub_category_from_url %}
+        <!-- <li {% if size==5 %} class="active" {% endif %}>
+          <a class="btn btn-link" href="/{{ s.group }}/{{ s_item.name }}/press-releases/">Press Releases</a>
+        </li> -->
+        {% for item in site.data.sidebar_links[s_item.name] %}
+          {% if item.visible %}
+          <li {% if item.name contains page_from_url %} class="active" {% endif %}>
+            <a class="btn btn-link" href="{{ item.link }}">{{item.name | replace: '-', ' ' | upcase_keyword }}</a>
+          </li>
+          <!-- <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collegiate-championships" aria-expanded="true" aria-controls="collapseOne">
+        collegiate championships
+      </button> -->
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+</ul>

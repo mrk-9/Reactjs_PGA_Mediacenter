@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+  {% include head.html path="/css/main-custom.css" %}
+    <body style="background-color: {{ page.body-color | default: 'white' }}">
+      <div id="main">
+        {% include sidebar.html %}
+        {% include header-mobile.html %}
+        {{ content }}
+      </div>
+    </body>
+ {% include scripts.html %}
+
+ <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+ <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.js"></script>
+
+ 
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.css@7.0.0/themes/reset-min.css">
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.css@7.0.0/themes/algolia-min.css">
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/react-instantsearch/5.2.2/Connectors.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/react-instantsearch/5.2.2/Core.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/react-instantsearch/5.2.2/Dom.min.js"></script>
+ <script type="text/babel" src="/js/react/main.js"></script>
+
+</html>

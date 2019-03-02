@@ -1,0 +1,23 @@
+- group: spectator-championships
+  championships:
+    - name: pga-championship
+    - name: kitchenaid-senior-pga-championship
+    - name: kpmg-womens-pga-championship
+    - name: ryder-cup
+- group: member-championships
+  championships:
+    - name: pga-professional-championship
+    - name: senior-pga-professional-championship
+    - name: national-car-rental-assistant-pga-professional-championship
+    - name: pga-cup
+    - name: womens-pga-cup
+- group: junior-championships
+  championships:
+    - name: girls-junior-pga-championship
+    - name: boys-junior-pga-championship
+    - name: pga-jr-league-championship
+    - name: junior-ryder-cup
+- group: collegiate-championships
+  championships:
+    - name: pga-works-collegiate-championship
+    - name: pga-jones-cup

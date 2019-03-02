@@ -1,0 +1,33 @@
+- name: Media Guide
+  visible: true
+  file_path: 'https://media.pga.org/uploads/19MG_KWPGA.pdf'
+- name: Transcripts
+  visible: true
+  link: 'http://asaptext.com/orgs/pga/404/'
+- name: Logos
+  visible: true
+  file_path: 'https://www.dropbox.com/sh/hlhf9al5fbm1ecz/AAAZwTh9DAomaWxXMuTLvHeVa?dl=0'
+- name: Coverage Regulations
+  visible: false
+  file_path: /
+- name: Event Program
+  visible: false
+  link:
+- name: View Scoring
+  visible: false
+  link:
+- name: Fact Sheet
+  visible: false
+  file_path: /
+- name: Championship Field
+  visible: false
+  file_path: /
+- name: Players Guide
+  visible: false
+  file_path: /
+- name: Statistics
+  visible: true
+  file_path: 'https://www.dropbox.com/sh/ri4j5ixhfrihi98/AACpMWaxzoVbQcztgl5js2_Va?dl=0'
+- name: Photos
+  visible: true
+  file_path: /uploads/PhotoLink_MediaCenterKPMG.pdf

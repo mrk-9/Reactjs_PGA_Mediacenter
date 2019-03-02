@@ -1,0 +1,18 @@
+---
+layout: base
+---
+
+{% if page.hole_by_hole_visible or page.interview_schedules_visible or page.yardage_table_visible  %}
+  {% assign display_bottom_content = true %}
+{% endif %}
+
+{% if display_bottom_content %}
+  <main class="main-content">
+    {% include championships/content-top.html %}
+    {% include championships/content-bottom.html %}
+  </main>
+{% else %}
+  <main class="main-content h-100">
+    {% include championships/content-top.html %}
+  </main>
+{% endif %}

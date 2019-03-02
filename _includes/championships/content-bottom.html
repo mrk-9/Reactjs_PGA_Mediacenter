@@ -1,0 +1,54 @@
+<div class="{% if display_bottom_content %}main-content__bottom main-content__bottom-white{% endif %}">
+  <div class="container-fluid px-4 px-lg-5">
+    <div class="row">
+      <div class="col-xl-8">
+        {% if page.hole_by_hole_visible %}
+          <div class="main-content__bottom-description">
+            <h3 class="text-secondary title-sans-serif mb-4">Hole-by-hole</h3>
+            <p class="mb-3 p-lg">
+              {% if page.hole_by_hole_summary_description %}
+                {{ page.hole_by_hole_summary_description }}
+              {% else %}
+                {{ site.data.lorem.coming_soon }}
+              {% endif %}
+            </p>
+            {% if page.hole_by_hole_link %}
+              <a href="{{ page.hole_by_hole_link }}" class="btn btn-outline-info d-block d-sm-inline-block btn-lg">VIEW HOLE-BY-HOLE</a>
+            {% endif %}
+
+            {% if page.future_sites_visible %}
+              {% include championships/future_sites.html %}
+            {% endif %}
+          </div>
+        {% endif %}
+
+          
+        {% if page.interview_schedules_visible %}
+          <div class=interview-schedule>
+            <h3 class="text-secondary title-sans-serif mb-4">Interview Schedule</h3>
+            {% if page.interview_schedules[0].interviews.size > 0 %}
+              {% include championships/interview_schedules.html iterator=page.interview_schedules %}
+            {% else %}
+              {% include championships/interview_schedules_placeholder.html %}
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+
+      {% if page.yardage_table_visible %}
+        <div class="col-xl-4 yardage-table">
+          <h3 class="text-secondary title-sans-serif mb-4">Official Yardages</h3>
+            {% include championships/yardage_table.html %}
+            {% comment %}
+              <!-- {% include championships/yardage_table_placeholder.html %} -->
+            {% endcomment %}
+          {% if page.yardage_link %}
+            <div class="text-center">
+              <a href="{{ yardage_link }}" class="btn btn-outline-info btn-lg d-block d-sm-inline-block">DOWNLOAD YARDAGES</a>
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

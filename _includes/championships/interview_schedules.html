@@ -1,0 +1,11 @@
+{% assign i = include.iterator %}
+{% for i in page.interview_schedules %}
+  {% if i.date %}
+    <h6 class="text-secondary text-uppercase">{{ i.date | date: '%A' }}, {{ i.date | date: '%-m/%-d' }}</h6>
+  {% endif %}
+  <ul class="list-divided">
+    {% for interview in i.interviews %}
+      <li>{{ interview }}</li>
+    {% endfor %}
+  </ul>
+{% endfor %}

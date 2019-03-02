@@ -1,0 +1,44 @@
+---
+layout: base
+title: Contact Us
+subtitle: 'Official news, information, and press resource center of the PGA.'
+contact-data:
+  - title: Media Team
+    value: PGAMediaServices@pgahq.com
+  - title:
+    value:
+  - title: PGA General Information
+    value: 561-624-8400 or 800-477-6465
+  - title: Jamie Carbone
+    value: 'Senior Director, Public Relations'
+  - title: John Dever
+    value: 'Manager, Public Relations, Championships'
+  - title: Michael Abramowitz
+    value: 'Manager, Public Relations, PGA Membership'
+  - title: Bob Denney
+    value: PGA Historian
+  - title: Pat Kravitz
+    value: Media Relations Specialist
+---
+
+<main class="main-content">
+    <div class="main-content__top main-content__top-home">
+        <div class="tiles-wrapper p-md-5">
+            <h1 class="text-secondary title-sans-serif">{{ page.title }}</h1>
+            <p>{{ page.subtitle }}</p>
+        </div>
+    </div>
+    {% include mobile-nav.html %}
+    <div class="main-content__bottom main-content__bottom-home">
+        <div class="container-fluid px-md-5">
+            {% for i in page.contact-data %}
+            <div class="row">
+                <div class="col-lg-6">
+                    <h4 class="mb-1 title-sans-serif text-secondary text-center text-md-left">{{ i.title }}</h4>
+                    <p>{{ i.value }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</main>
